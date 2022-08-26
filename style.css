@@ -1,0 +1,420 @@
+html,
+body {
+    font-family: 'Typesauce', Arial, Helvetica, sans-serif;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+    font-size: 15pt;
+}
+
+
+
+header {
+    position: relative;
+    display: block;
+    width: 100%;
+
+    color: white;
+    background: rgb(255 54 54);
+    background: radial-gradient(ellipse at center center, rgb(255, 0, 0) 0%, rgb(255, 0, 0) 30%, rgb(185, 0, 0) 100%);
+    margin-bottom: 100px;
+    background-position: 0 100px;
+
+}
+
+header h1 {
+    margin: 0;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    text-align: center;
+    color: white
+}
+
+main {
+    text-align: center;
+}
+
+footer {
+    display: inline;
+    position: fixed;
+    margin: auto;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 10px;
+    background-color: black;
+    text-align: center;
+    color: rgb(95, 95, 95);
+    font-size: small;
+    text-align: center;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.btn-getfile {
+    width: 235px;
+    height: 70px;
+    text-align: center;
+    vertical-align: middle;
+    background-color: #ff0000;
+    border-radius: 10px;
+    border: 1px solid #b60000;
+    color: white;
+    font-size: 15pt;
+    transition: all 0.3s;
+    margin: 5px;
+    padding: 0;
+}
+
+.btn-getfile:hover {
+    background-color: #7c0000;
+    transform: scale(1.03);
+}
+
+.btn-getfile:active {
+    background-color: #ff0000;
+    transform: scale(0.97);
+}
+
+
+.popup {
+    position: absolute;
+    margin: auto;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    background-color: rgb(255, 255, 255);
+    border-radius: 27px;
+    width: 909px;
+    height: 555px;
+    border: 1px solid rgb(255, 255, 255);
+    z-index: 999;
+    padding: 0;
+    display: none;
+    justify-content: left;
+    align-items: stretch;
+    flex-wrap: wrap;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.349);
+    transition: transform 0.5s, opacity 0.5s;
+}
+
+.popup-back {
+    background-color: rgba(0, 0, 0, 0.588);
+    width: 100%;
+    height: 100%;
+    margin: auto;
+    z-index: 999;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: none;
+    overflow-x: hidden;
+    overflow-y: auto;
+    transition: all 0.5s;
+}
+
+.popup-btn-close {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    margin: auto;
+    color: red;
+    transition: all 0.3s;
+    padding: 1px 9px;
+    border: 0;
+    border-radius: 100%;
+    font-size: 20pt;
+    background-color: transparent;
+    z-index: 6;
+
+}
+
+.popup-btn-close:hover {
+    color: rgb(0, 0, 0);
+
+}
+
+.popup-btn-close:active {
+    transform: scale(0.8);
+}
+
+.popup h3 {
+    font-size: 26pt;
+    padding: 40px;
+    width: 50%;
+    margin: 0;
+    display: flex;
+    order: 1;
+}
+
+.popup-img-block {
+    order: 2;
+    width: 50%;
+    margin: 0;
+    display: block;
+    position: relative;
+}
+
+.gf-files {
+    width: 100%;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+.gf-filebox {
+    position: absolute;
+    bottom: -3px;
+    left: 0px;
+    right: 0px;
+    margin: auto;
+}
+
+.popup-gf-form {
+    z-index: 3;
+    padding: 60px;
+    padding-top: 0;
+    order: 3;
+    width: 50%;
+    margin: 0;
+    display: block;
+    flex-basis: 50%;
+    box-sizing: border-box;
+
+}
+
+.popup-gf-form label {
+    font-size: 11pt;
+    margin-top: 20px;
+    display: inline-block
+}
+
+.popup-gf-form input {
+    font-size: 14pt;
+    border-radius: 5px;
+    border: 1px solid grey;
+    padding: 10px;
+    width: 100%;
+    margin: 10px 0;
+    box-sizing: border-box;
+    outline: 0 !important;
+    transition: all 0.3s;
+}
+
+.popup-gf-form input:focus {
+    transform: scale(1.03);
+}
+
+
+.popup-gf-form button {
+    margin: 10px 0;
+    border-radius: 5px;
+    text-align: center;
+    padding: 10px;
+    box-sizing: border-box;
+    background-color: rgb(0, 196, 103);
+    width: 100%;
+    font-size: 18pt;
+    color: white;
+    border: 1px solid rgb(0, 196, 103);
+    box-shadow: 0px 5px 1px rgba(15, 110, 66, 1);
+    transition: all 0.3s;
+    position: relative;
+    overflow: hidden;
+}
+
+.popup-gf-form button::before {
+    content: '';
+    position: absolute;
+    background-image: linear-gradient(rgba(255, 255, 255, 0.3) 0%, rgba(255, 255, 255, 0.3) 10%, rgba(255, 255, 255, 0) 100%);
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    display: block;
+}
+
+.popup-gf-form button:hover {
+    background-color: rgb(0, 250, 133);
+    transform: scale(1.05);
+    box-shadow: 0px 10px 10px rgba(15, 110, 66, 0.5);
+}
+
+.popup-gf-form button img {
+    vertical-align: middle;
+}
+
+.popup-gf-form small {
+    display: inline-block;
+    width: 100%;
+    text-align: center;
+    color: rgb(51, 51, 51);
+    font-size: 8pt;
+    box-sizing: border-box;
+
+}
+
+.popup-gf-form small span {
+    display: inline-block;
+    padding: 10px 10px;
+}
+
+.noty {
+    width: 300px;
+    position: fixed;
+    top: 10px;
+    left: 0;
+    right: 0;
+    margin: auto;
+    padding: 20px;
+    font-size: 12pt;
+    border-radius: 5px;
+    box-shadow: 0 0 10px black;
+    background-color: white;
+    transition: all 0.3s;
+    z-index: 9999999
+}
+
+.noty-error {
+    background-color: black;
+    color: white;
+}
+
+
+.noty-btn-close {
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    margin: auto;
+    color: rgb(255, 0, 0);
+    transition: all 0.3s;
+    padding: 1px 9px;
+    border: 0;
+    border-radius: 100%;
+    font-size: 20pt;
+    background-color: transparent;
+    z-index: 6;
+}
+
+.noty-btn-close:hover {
+    transform: scale(0.8);
+}
+
+
+
+@media (max-width: 909px) {
+    .popup {
+        width: 100%
+    }
+
+    .popup h3 {
+        font-size: 4vw;
+        margin-right: 100px;
+    }
+
+    .popup-gf-form {
+        flex-basis: 454px;
+        background-color: rgba(255, 255, 255, 0.5);
+    }
+
+    .popup-img-block {
+        flex-basis: calc(100% - 454px);
+    }
+
+    .gf-files {
+        position: absolute;
+        width: 120%;
+        z-index: 4;
+    }
+
+
+}
+
+@media (max-width: 600px) {
+    .popup-img-block {
+        width: 100%;
+        flex-basis: 100%;
+        order: 1;
+        text-align: center;
+    }
+
+    .popup h3 {
+        width: 100%;
+        flex-basis: 100%;
+        order: 2;
+        margin: 0;
+        text-align: center;
+    }
+
+    .gf-files {
+        position: absolute;
+        bottom: -20px;
+        width: 100%;
+    }
+
+    .gf-filebox {
+        width: 70%;
+        position: relative;
+    }
+
+    .popup-gf-form {
+        width: 100%;
+        flex-basis: 100%;
+        order: 3;
+    }
+
+    .popup {
+        height: fit-content;
+        height: max-content;
+    }
+
+    .popup-gf-form {
+        padding-bottom: 0;
+    }
+}
+
+
+@media (max-width: 480px) {
+    .popup-gf-form {
+        padding: 20px;
+    }
+
+    .popup h3 {
+        font-size: 5vw;
+        padding: 30px 11px 0px 10px;
+    }
+
+    .popup-gf-form small {
+        display: none
+    }
+}
+
+@media (max-width: 320px) {
+
+    .noty {
+        width: auto;
+        left: 10px;
+        right: 10px;
+    }
+
+    .popup-gf-form {
+        padding-top: 0;
+    }
+
+    .popup-gf-form label {
+        font-size: 10pt;
+        margin-top: 5px;
+    }
+
+    .popup-gf-form button {
+        font-size: 17pt;
+    }
+
+    .popup-gf-form button img {
+        width: 25px;
+    }
+
+    .gf-files img {
+        width: 10vw;
+    }
+}

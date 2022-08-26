@@ -1,0 +1,30 @@
+<?php
+/**
+ * Файл конфигурации
+ * 
+ * 
+ * SMTP_HOST - SMTP сервер для отправки почты
+ * SMTP_PORT - порт SMTP сервера
+ * SMTP_FROM - Этот почтовый адрес быдет значится в поле From:
+ * SMTP_USER - Логин SMTP
+ * SMTP_PASS - Пароль SMTP
+ * SMTP_NOAUTH - Отключение авторизации при подключении к SMTP серверу
+ * 
+ * @copyright IntroZorn (c) 2022, Хроленко П.А.
+ */
+
+
+define('SMTP_HOST', 'smtp-1.ru');
+define('SMTP_PORT', 25);
+define('SMTP_FROM', 'sender@introzorn.ru');
+define('SMTP_USER', 'u515535');
+define('SMTP_PASS', '');
+define('SMTP_NOAUTH',false);
+
+define('USE_STANDART_MAIL',false);
+
+
+define('MAILTO','email@gmail.com');
+
+//для первичной авторизации используется AMO_CLIENT_REDIRECT
+define('AMO_CLIENT_REDIRECT','https://amo.ru/amoauth.php');
